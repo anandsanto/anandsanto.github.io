@@ -3,7 +3,7 @@
 let script = 'https://script.google.com/macros/s/AKfycby5bX31JwGbPzhumA7atIgDdQwwD-qoTw3DXVcnL8tVmej_t8vm/exec';
 
 let headervue = new Vue({
-    el: '#header',
+    el: '#wrapperid',
     data: {
         name: "First Last",
         desig: "Desig",
@@ -14,15 +14,10 @@ let headervue = new Vue({
         email: false,
         github: false,
         location: false,
-    }
-});
-
-let aboutmevue = new Vue({
-    el: '#aboutmedetails',
-    data: {
         aboutme: "",
     }
 });
+
 
 function loadProfile(){
     axios.get(script+'?type=profile',{crossdomain: true}).then(function (response) {
@@ -36,7 +31,7 @@ function loadProfile(){
         headervue.linkedin = profile.social.linkedin;
         headervue.github = profile.social.github;
         headervue.email = "mailto: "+profile.social.mail;
-        aboutmevue.aboutme = profile.aboutme;
+        headervue.aboutme = profile.aboutme;
     });
 }
 

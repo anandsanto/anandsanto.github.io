@@ -10,47 +10,31 @@ body{
     padding: 30px;
     margin-right: 0px;
 }
-.icon{
-    transition: all .2s ease-in-out;
-}
-.icon:hover{
-    transform: scale(1.4);
-}
-#desig{
-    font-family: "Comic Sans MS", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
-    letter-spacing: -1pt;
-    word-spacing: -1pt;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-}
-#nametitle{
-    font-family: "Comic Sans MS", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
-    letter-spacing: : 0vw;
-    word-spacing: 0vw;
-    font-size: 3vw;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-}
+#aboutmediv{
+    min-height: 100vh;
+    background-image: url("../res/bgnd.png");
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;/*no-repeat;*/
+    background-size: cover;
+    padding: 40px;
 
-#aboutme{
-    font-family: "Courier New", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
-    font-size: 7vw;
+}
+#aboutmetitle{
+    /*font-family: "Courier New", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
+    font-size: 40pt;
     font-weight: normal;
     text-decoration: none;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
-    margin-top: 100px;
     padding-left: 15px;
     line-height: 6vw;
     color: #21243d;
     opacity: 0.9;
+    padding-top: 50px;
+    
 }
 
 #aboutmedetails{
@@ -66,4 +50,6 @@ body{
     text-transform: none;
     line-height: 40pt;
     width: 80%;
+    text-align: justify;
+    text-justify: inter-word;
 }

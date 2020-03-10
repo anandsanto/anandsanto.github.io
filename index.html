@@ -6,131 +6,147 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Anand Narayanan</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"  crossorigin="anonymous">
+
         <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
         <link href="css/style.css" rel="stylesheet">
         <link href="css/timeline.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link href="css/sidebar.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!-- Font Awesome JS -->
+        <script src="https://kit.fontawesome.com/92ab13fe6a.js" crossorigin="anonymous"></script>
     </head>
 
-    <div id="header">
-        <nav class="navbar navbar-expand-md navbar-light" style="background-color: #ededed;" >
-            <img src="res/anand_crop_wobg.png" width="90vh" height="90vh" class="d-inline-block align-top" alt="" style="border-radius: 50%">
-            <p>
-                <div id="nametitle">{{ name }}</div>
-            </p>
+    <div class="wrapper" id="wrapperid">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div style="text-align:center;width:100%;">
+                <div class="fullsidebar">
+                    <h3>{{name}}</h3>
+                </div>
 
+                    <img src="res/anand.jpeg" width="50%"  class="d-inline-block align-top" alt="" id="photo">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <div class="fullsidebar">
+                        {{desig}}, <br>
+                        {{affiliatedOrg}}
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Timeline</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Publications</a>
-                    </li>
+                    </div>
+                    <strong>AN</strong>
+                </div>
+                
 
-                    <!-- <li class="nav-item dropdown">
-                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Dropdown link
-                         </a>
-                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                         <a class="dropdown-item" href="#">Action</a>
-                         <a class="dropdown-item" href="#">Another action</a>
-                         <a class="dropdown-item" href="#">Something else here</a>
-                         </div>
-                         </li> -->
-                </ul>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        Timeline
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-copy"></i>
+                        Publications
+                    </a>
+                </li>
+            </ul>
+
+            <div class="row">
+                <div class="col-sm" v-if="facebook">
+                    <center><a v-bind:href="facebook">
+                        <i class="fab fa-facebook-f icon"></i>
+                    </a></center>
+                </div>
+                <div class="col-sm" v-if="linkedin">
+                    <center><a v-bind:href="linkedin">
+                        <i class="fab fa-linkedin icon"></i>
+                    </a></center>
+                </div>
+                <div class="col-sm" v-if="github">
+                    <center><a v-bind:href="github">
+                        <i class="fab fa-github icon"></i>
+                    </a></center>
+                </div>
+                <div class="col-sm" v-if="email">
+                    <center><a v-bind:href="email">
+                        <i class="fas fa-envelope-open icon"></i>
+                    </a></center>
+                </div>
             </div>
 
         </nav>
 
-        <nav class="navbar navbar-expand-md navbar-dark " style='background-color: #21243d;'> 
-            <img v-bind:src="logourl" width="40" height="40" class="d-inline-block align-top" alt="" style="border-radius: 50%; margin-right: 30px; margin-left: 30px">
-            <div class="navbar-brand" id="desig">{{ desig  }}, {{affiliatedOrg}}</div>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item" v-if="linkedin">
-                    <a v-bind:href="linkedin">
-                        <img src="res/icons/linkedin.png" width="40" height="40" class="d-inline-block align-top nav-link icon" alt="" >
-                    </a>
-                </li>
-                <li class="nav-item" v-if="facebook">
-                    <a v-bind:href="facebook">
-                        <img src="res/icons/fb.png" width="40" height="40" class="d-inline-block align-top nav-link icon" alt="" >
-                    </a>
-                </li>
-                <li class="nav-item" v-if="email">
-                    <a v-bind:href="email">
-                        <img src="res/icons/gmail.png" width="40" height="40" class="d-inline-block align-top nav-link icon" alt="" >
-                    </a>
-                </li>
-                <li class="nav-item" v-if="github">
-                    <a v-bind:href="github">
-                        <img src="res/icons/github.png" width="40" height="40" class="d-inline-block align-top nav-link icon" alt="" >
-                    </a>
-                </li>
-                <li class="nav-item" v-if="location">
-                    <a href="#">
-                        <img src="res/icons/location.png" width="40" height="40" class="d-inline-block align-top nav-link icon" alt="" >
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 
-    <div class="row">
-        <div class="col-md-3" style="border-right-style: dotted; border-right-width:2px">
-            <!-- <img src="res/aboutme.png"  class="d-inline-block align-top" alt="" style="border-radius: 50%; margin-right: 30px; margin-left: 30px; padding-top: 100px"> -->
-            <p id="aboutme">
+        <div id="content">
+            <div id="aboutmediv">
+            <p id="aboutmetitle">
                 About Me
             </p>
-        </div>
-        <div class="col-md-9" >
-            <p id="aboutmedetails">
-{{ aboutme }}
+            <p id="aboutmedetails" >
+                {{ aboutme }}
             </p>
+            </div>
+
+            <!-- 
+                 <div class="history-tl-container">
+                 <ul class="tl">
+                 <li class="tl-item" ng-repeat="item in retailer_history">
+                 <div class="timestamp">
+                 3rd March 2015<br> 7:00 PM
+                 </div>
+                 <div class="item-title">Start from Shire</div>
+                 <div class="item-detail">Don't forget the ring</div>
+                 </li>
+                 <li class="tl-item" ng-repeat="item in retailer_history">
+                 <div class="timestamp">
+                 19th March 2015<br> 3:00 PM
+                 </div>
+                 <div class="item-title">Kill some Orcs</div>
+                 <div class="item-detail">Don't enter the caves!!</div>
+                 </li>
+                 <li class="tl-item" ng-repeat="item in retailer_history">
+                 <div class="timestamp">
+                 1st June 2015<br> 7:00 PM
+                 </div>
+                 <div class="item-title">Throw that goddamn ring in the lava</div>
+                 <div class="item-detail">Also, throw that Gollum too</div>
+                 </li>
+
+                 </ul>
+
+                 </div> -->
+
         </div>
-    </div>
-    <!-- 
-         <div class="history-tl-container">
-         <ul class="tl">
-         <li class="tl-item" ng-repeat="item in retailer_history">
-         <div class="timestamp">
-         3rd March 2015<br> 7:00 PM
-         </div>
-         <div class="item-title">Start from Shire</div>
-         <div class="item-detail">Don't forget the ring</div>
-         </li>
-         <li class="tl-item" ng-repeat="item in retailer_history">
-         <div class="timestamp">
-         19th March 2015<br> 3:00 PM
-         </div>
-         <div class="item-title">Kill some Orcs</div>
-         <div class="item-detail">Don't enter the caves!!</div>
-         </li>
-         <li class="tl-item" ng-repeat="item in retailer_history">
-         <div class="timestamp">
-         1st June 2015<br> 7:00 PM
-         </div>
-         <div class="item-title">Throw that goddamn ring in the lava</div>
-         <div class="item-detail">Also, throw that Gollum too</div>
-         </li>
-
-         </ul>
-
-         </div> -->
-
-    <script src="js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
+        <script type="text/javascript">
+         $(document).ready(function () {
+             $('#aboutme').on('click', function () {
+                 $('#sidebar').toggleClass('active');
+             });
+         });
+        </script>
 
 </html>
