@@ -15,6 +15,22 @@ let headervue = new Vue({
         github: false,
         location: false,
         aboutme: "",
+    },
+    created() {
+        window.addEventListener('resize', this.handleResize);
+        this.handleResize();
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.handleResize);
+    },
+    methods:{
+        handleResize(){
+            if(window.innerWidth < 768){
+                $('#sidebar').addClass('active');
+            }else{
+                $('#sidebar').removeClass('active');
+            }
+        }
     }
 });
 

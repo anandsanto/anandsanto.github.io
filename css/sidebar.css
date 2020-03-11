@@ -58,6 +58,8 @@ span {
 .wrapper {
     display: flex;
     align-items: stretch;
+    min-width: 100vw;
+    max-width: 100vw;
 }
 
 #sidebar {
@@ -73,8 +75,8 @@ span {
 }
 
 #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 95px;
+    max-width: 95px;
     text-align: center;
 }
 
@@ -216,12 +218,18 @@ a.article:hover {
 ----------------------------------------------------- */
 
 #content {
-    width: 100%;
+    max-width: 100%;
     /*padding: 20px;*/
     min-height: 100vh;
     max-height: 100vh;
     overflow-y: scroll;
     transition: all 0.3s;
+}
+
+.maindiv{
+    width = calc(100vw - 300px);
+    max-width = calc(100vw - 300px);
+    min-width = 100px;
 }
 
 /* ---------------------------------------------------
@@ -230,10 +238,17 @@ a.article:hover {
 
 @media (max-width: 768px) {
     #sidebar {
-        min-width: 80px;
-        max-width: 80px;
+        min-width: 95px;
+        max-width: 95px;
         text-align: center;
-vp        margin-left: -80px !important;
+        /*margin-left: -80px !important;*/
+
+    }
+    .maindiv{
+        width = calc(100vw - 95px);
+        max-width = calc(100vw - 95px);
+        /*width: 100vw;
+        max-width: 100vw;*/
     }
     .dropdown-toggle::after {
         top: auto;
