@@ -38,7 +38,7 @@ body{
 }
 
 #aboutmedetails{
-    font-family: "Comic Sans MS", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
+    /*font-family: "Comic Sans MS", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
     font-size: 20pt;
     letter-spacing: -1.4pt;
     word-spacing: 0px;
@@ -51,4 +51,26 @@ body{
     line-height: 40pt;
     text-align: justify;
     text-justify: inter-word;
+}
+
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    #aboutmetitle{
+        font-size: 20pt;
+        letter-spacing: normal;
+        word-spacing: normal;
+    }
+
+    #aboutmedetails{
+        font-size: 10pt;
+        letter-spacing: normal;
+        word-spacing: normal;
+    }
+
 }
