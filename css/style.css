@@ -19,8 +19,22 @@ body{
     background-position: center;
     background-repeat: repeat;/*no-repeat;*/
     background-size: cover;
-    padding: 40px;
+
 }
+
+.sec_title{
+    max-width: 1000px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.sec_content{
+    max-width: 1200px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
 #aboutmetitle{
     /*font-family: "Courier New", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
     font-size: 40pt;
@@ -29,12 +43,11 @@ body{
     font-style: normal;
     font-variant: normal;
     text-transform: none;
-    padding-left: 15px;
     line-height: 6vw;
     color: #21243d;
     opacity: 0.9;
     padding-top: 50px;
-    
+
 }
 
 #aboutmedetails{
@@ -48,7 +61,7 @@ body{
     font-style: normal;
     font-variant: normal;
     text-transform: none;
-    line-height: 40pt;
+    line-height: 50pt;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -71,6 +84,7 @@ body{
         font-size: 10pt;
         letter-spacing: normal;
         word-spacing: normal;
+        line-height: 30pt;
     }
 
 }
