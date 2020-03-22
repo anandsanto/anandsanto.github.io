@@ -249,6 +249,10 @@ a.article:hover {
         /*margin-left: -80px !important;*/
 
     }
+    .scrollcontainer {
+        left: calc((100vw - 95px)/2 + 95px);
+    }
+
     .maindiv{
         width: calc(100vw - 95px);
         max-width: calc(100vw - 95px);
