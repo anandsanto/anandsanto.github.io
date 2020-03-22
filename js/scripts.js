@@ -1,4 +1,32 @@
-// Empty JS for your own code to be here
+$(document).ready(function () {
+    var wrapperChildren = $("#content").children();
+    var sections = [];
+    for (var i = 0; i < wrapperChildren.length; i++) {
+        sections.push(wrapperChildren[i].id.slice(0,-4));
+    }
+    for (let i of sections) {
+        $('#sb_'+i).on('click', function(){
+            $('#sidebar li').removeClass();
+            $(this).parent().addClass('active');
+            $('#content').scrollTo('#'+i+"_div", {duration:500,});
+        });
+    }
+
+
+    $('#content').on('scroll', function(){
+        var wrapperChildren = $("#content").children();
+        let curScrollPos = $("#content").scrollTop();
+        let iterHeight = 0;
+        for (var i = 0; i < wrapperChildren.length; i++) {
+            if(iterHeight + $(wrapperChildren[i]).height() > curScrollPos){
+                $('#sidebar li').removeClass();
+                $('#sb_'+wrapperChildren[i].id.slice(0,-4)).parent().addClass('active');
+                console.log('#sb_'+wrapperChildren[i].id.slice(0,-4));
+                break;
+            }
+        }
+    });
+});
 
 let script = 'https://script.google.com/macros/s/AKfycby5bX31JwGbPzhumA7atIgDdQwwD-qoTw3DXVcnL8tVmej_t8vm/exec';
 
