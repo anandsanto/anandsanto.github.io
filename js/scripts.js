@@ -14,6 +14,7 @@ let headervue = new Vue({
         email: false,
         github: false,
         location: false,
+        experience: [],
         aboutme: "",
     },
     created() {
@@ -48,6 +49,7 @@ function loadProfile(){
         headervue.github = profile.social.github;
         headervue.email = "mailto: "+profile.social.mail;
         headervue.aboutme = profile.aboutme;
+        headervue.experience = profile.experience;
     });
 }
 

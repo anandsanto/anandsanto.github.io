@@ -56,21 +56,18 @@
             <ul class="list-unstyled components">
                 <li class="active">
 
-                    <a href="#">
+                    <a href="#" id="sb_home">
                         <i class="fas fa-home"></i>
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" id="sb_experience">
                         <i class="fas fa-briefcase"></i>
-                        Timeline
-                    </a>
-                    <a href="#">
-                        <i class="fas fa-copy"></i>
-                        Publications
+                        Experience
                     </a>
                 </li>
+
             </ul>
 
             <div class="row">
@@ -100,16 +97,50 @@
 
 
         <div id="content">
-            <center>
-            <div class="maindiv" id ="aboutmediv">
+
+            <div class="maindiv" id ="home_div">
+                <center>
             <p id="aboutmetitle" class="sec_title">
                 About Me
             </p>
             <p id="aboutmedetails" class="sec_content">
                 {{ aboutme }}
             </p>
+                </center>
             </div>
-            </center>
+
+            <div class="container maindiv" id ="experience_div">
+	              <div class="row">
+		                <div class="col-md-10 offset-md-1">
+                        <p id="wexp_title" class="sec_title">
+			                  Experience
+                        </p>
+			                  <ul class="timeline">
+				                    <li v-for="(item, index) in experience">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <img v-bind:src="item.logo" class="d-inline-block align-top explogo" alt="" id="photo">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a target="_blank" v-bind:href="item.url" class="exporgname">{{item.Org}}</a>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="exporgperiod">
+                                            {{item.period}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="exporgdesc">
+{{item.desc}}
+                                    </p>
+                                </div>
+                            </li>
+			                  </ul>
+		                </div>
+	              </div>
+            </div>
+
             <!-- 
                  <div class="history-tl-container">
                  <ul class="tl">
@@ -142,11 +173,7 @@
         </div>
         <script src="js/scripts.js"></script>
         <script type="text/javascript">
-         $(document).ready(function () {
-             $('#aboutme').on('click', function () {
-                 $('#sidebar').toggleClass('active');
-             });
-         });
+
         </script>
     </body>
 </html>

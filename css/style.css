@@ -104,9 +104,10 @@ body{
     padding: 30px;
     margin-right: 0px;
 }
-#aboutmediv{
+#home_div{
     min-height: 100vh;
-    background-image: url("../res/bgnd.png");
+    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("../res/lines_blue.jpg");
+    //background-image: url("../res/paravai.jpg");
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -115,10 +116,23 @@ body{
 
 }
 
+
+
 .sec_title{
     max-width: 1000px;
     padding-left: 30px;
     padding-right: 30px;
+    font-size: 40pt;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 6vw;
+    color: #21243d;
+    opacity: 0.9;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .sec_content{
@@ -130,21 +144,13 @@ body{
 
 #aboutmetitle{
     /*font-family: "Courier New", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
-    font-size: 40pt;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 6vw;
-    color: #21243d;
-    opacity: 0.9;
-    padding-top: 50px;
+    color: #18293e;
 
 }
 
 #aboutmedetails{
     /*font-family: "Comic Sans MS", cursive, sans-serif;/*ont-family: "Courier New", Courier, monospace;*/
+    font-family: 'Poppins', sans-serif;
     font-size: 20pt;
     letter-spacing: -1.4pt;
     word-spacing: 0px;
@@ -160,24 +166,98 @@ body{
 }
 
 
+/* EXPERIENCE SECTION */
 
+
+#experience_div{
+    min-height: 100vh;
+    background: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)), url("../res/lines.jpg");
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;/*no-repeat;*/
+    background-size: cover;
+
+}
+
+.explogo{
+    width: 75px;
+}
+
+.exporgname {
+    font-size: 20pt;
+    color: black;
+}
+
+.exporgname :hover{
+    color: blue;
+}
+
+.exporgperiod{
+    font-family: 'Poppins', sans-serif;
+    color: #3c3f55;
+}
+
+.exporgdesc{
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1em;
+        font-weight: 300;
+        line-height: 1.7em;
+        color: #43599d;
+        text-align: justify;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
 
-    #aboutmetitle{
+    .sec_title{
         font-size: 20pt;
         letter-spacing: normal;
         word-spacing: normal;
     }
 
     #aboutmedetails{
-        font-size: 10pt;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1em;
+        font-weight: 300;
+        line-height: 1.7em;
+        text-align: justify;
+        line-height: normal;
         letter-spacing: normal;
         word-spacing: normal;
-        line-height: 30pt;
     }
 
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #21243d;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
 }
