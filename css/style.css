@@ -206,6 +206,15 @@ body{
         color: #43599d;
         text-align: justify;
 }
+
+#exp_grid_row{
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+#exp_grid_col{
+    padding-left: 0;
+    padding-right: 0;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -227,6 +236,14 @@ body{
         line-height: normal;
         letter-spacing: normal;
         word-spacing: normal;
+    }
+    #exp_grid_row{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #exp_grid_col{
+        padding-left: 0;
+        padding-right: 0;
     }
 
 }
