@@ -1,177 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="row noscrollbar">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Anand Narayanan</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"  crossorigin="anonymous">
-
-        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+        <title>🤠 @anandsanto</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
         <link href="css/style.css" rel="stylesheet">
-        <link href="css/timeline.css" rel="stylesheet">
-        <link href="css/sidebar.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-        <script src="js/jquery.scrollTo.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <!-- Font Awesome JS -->
         <script src="https://kit.fontawesome.com/92ab13fe6a.js" crossorigin="anonymous"></script>
     </head>
 
-    <body>
-        <div class="scrollcontainer">
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-            <span class="text">Scroll down</span>
-        </div>
-        <div class="wrapper" id="wrapperid">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <div style="text-align:center;width:100%;">
-                        <div class="fullsidebar">
-                            <h3>{{name}}</h3>
-                        </div>
+    <body class="row noscrollbar">
+        <div class="container page d-flex" id="intro_cont">
 
-                        <img src="res/anand.jpeg" width="50%"  class="d-inline-block align-top" alt="" id="photo">
 
-                        <div class="fullsidebar">
-                            {{desig}}, <br>
-                            {{affiliatedOrg}}
+            <div class="justify-content-center align-self-center">
 
-                        </div>
-                        <strong>AN</strong>
-                    </div>
-
+                <div id='welcome'>
+                    Hola 👋 I am<br>
 
                 </div>
+                <div id='name'>
+                    Anand <br>
+                    Narayanan
+                </div>
+                <div id='subtitle'>
+                    Incoming Grad Student @ Georgia Institute of Technology<br>
+                    <span id='subsubtitle'>Ex: ISRO | IIST</span>
+                </div>
 
-                <ul class="list-unstyled components">
-                    <li class="active">
-
-                        <a href="#" id="sb_home">
-                            <i class="fas fa-home"></i>
-                            Home
+                <div id="social_media_set">
+                    <div class="col-sm icon">
+                        <a href="https://www.linkedin.com/in/anandsanto/">
+                            <i class="fab fa-linkedin"></i>
                         </a>
-                    </li>
-                    <li>
-                        <a href="#" id="sb_experience">
-                            <i class="fas fa-briefcase"></i>
-                            Experience
+                    </div>
+                    <div class="col-sm icon">
+                        <a href="https://github.com/anandsanto">
+                            <i class="fab fa-github"></i>
                         </a>
-                    </li>
+                    </div>
+                    <div class="col-sm icon">
+                        <a href="https://stackoverflow.com/users/15999182/anand-narayanan">
+                            <i class="fab fa-stack-overflow"></i>
+                        </a>
+                    </div>
+                    <div class="col-sm icon">
+                        <a href="https://t.me/anandsanto">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                    <div class="col-sm icon">
+                        <a href="https://twitter.com/anandsanto">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="col-sm icon">
+                        <a href="https://www.instagram.com/anandsanto/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
 
-                </ul>
+                    <div class="col-sm icon">
+                        <a href="mailto:anandsanto@gmail.com">
+                            <i class="fas fa-envelope-open"></i>
+                        </a>
+                    </div>
 
-                <div class="row">
-                    <div class="col-sm" v-if="facebook">
-                        <center><a v-bind:href="facebook">
-                            <i class="fab fa-facebook-f icon"></i>
-                        </a></center>
-                    </div>
-                    <div class="col-sm" v-if="linkedin">
-                        <center><a v-bind:href="linkedin">
-                            <i class="fab fa-linkedin icon"></i>
-                        </a></center>
-                    </div>
-                    <div class="col-sm" v-if="github">
-                        <center><a v-bind:href="github">
-                            <i class="fab fa-github icon"></i>
-                        </a></center>
-                    </div>
-                    <div class="col-sm" v-if="email">
-                        <center><a v-bind:href="email">
-                            <i class="fas fa-envelope-open icon"></i>
-                        </a></center>
-                    </div>
                 </div>
-
-            </nav>
-            <div id="content">
-
-                <div class="maindiv" id ="home_div">
-                    <center>
-                        <p id="aboutmetitle" class="sec_title">
-                            About Me
-                        </p>
-                        <p id="aboutmedetails" class="sec_content">
-                            {{ aboutme }}
-                        </p>
-                    </center>
-                </div>
-
-                <div class="container maindiv" id ="experience_div">
-	                  <div class="row" id="exp_grid_row">
-		                    <div class="col-sm-12" id="exp_grid_col">
-                            <p id="wexp_title" class="sec_title">
-			                          Experience
-                            </p>
-			                      <ul class="timeline">
-				                        <li v-for="(item, index) in experience">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <img v-bind:src="item.logo" class="d-inline-block align-top explogo" alt="" id="photo">
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <a target="_blank" v-bind:href="item.url" class="exporgname">{{item.Org}}</a>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="exporgperiod">
-                                                {{item.period}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <p class="exporgdesc">
-                                            {{item.desc}}
-                                        </p>
-                                    </div>
-                                </li>
-			                      </ul>
-		                    </div>
-	                  </div>
-                </div>
-
-                <!-- 
-                     <div class="history-tl-container">
-                     <ul class="tl">
-                     <li class="tl-item" ng-repeat="item in retailer_history">
-                     <div class="timestamp">
-                     3rd March 2015<br> 7:00 PM
-                     </div>
-                     <div class="item-title">Start from Shire</div>
-                     <div class="item-detail">Don't forget the ring</div>
-                     </li>
-                     <li class="tl-item" ng-repeat="item in retailer_history">
-                     <div class="timestamp">
-                     19th March 2015<br> 3:00 PM
-                     </div>
-                     <div class="item-title">Kill some Orcs</div>
-                     <div class="item-detail">Don't enter the caves!!</div>
-                     </li>
-                     <li class="tl-item" ng-repeat="item in retailer_history">
-                     <div class="timestamp">
-                     1st June 2015<br> 7:00 PM
-                     </div>
-                     <div class="item-title">Throw that goddamn ring in the lava</div>
-                     <div class="item-detail">Also, throw that Gollum too</div>
-                     </li>
-
-                     </ul>
-
-                     </div> -->
-
             </div>
-            <script src="js/scripts.js"></script>
-            <script type="text/javascript">
 
-            </script>
+
+        </div>
+
+        <div class="container page" >
+
+            <div class="page_title"  style='height:15%'>
+                I am..
+            </div>
+            <div class="row noscrollbar" style='max-height:75%; overflow: scroll'>
+                <div class="col-md-12 col-xl-10">
+                    <p class='page_list_content'>
+                        From Chennai, India 📍
+                        <span class='sep'> ⚫ </span> Currently in Bangalore, India
+                        <span class='sep'> ⚫ </span> Bilingual - Tamil and English (Tamil =  ❤️)
+                        <span class='sep'> ⚫ </span> A Computer Enthusiast 🖥️
+                        <span class='sep'> ⚫ </span> <a href='https://github.com/anandsanto' class="link-secondary"> An Open source contributor <svg width="24px" height="24px" viewBox="0 0 24 24"><g id="external_link" class="icon_svg-stroke" stroke="#666" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline><path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path></g></svg> </a>
+                        <span class='sep'> ⚫ </span> A Pythonista 🐍
+                        <span class='sep'> ⚫ </span> A Dog Person 🐕
+                        <span class='sep'> ⚫ </span> <a href='https://www.instagram.com/anandsanto/' class="link-secondary">A hobby Photographer 📷 <svg width="24px" height="24px" viewBox="0 0 24 24"><g id="external_link" class="icon_svg-stroke" stroke="#666" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline><path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path></g></svg></a>
+                        <span class='sep'> ⚫ </span> <a href='https://www.strava.com/athletes/30853577' class="link-secondary"> A Road Cyclist (12k+ km) 🚴 <svg width="24px" height="24px" viewBox="0 0 24 24"><g id="external_link" class="icon_svg-stroke" stroke="#666" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline><path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path></g></svg> </a>
+                        <span class='sep'> ⚫ </span> Always ready for a hot cup of cofee ☕
+                        <span class='sep'> ⚫ </span> <a href='https://www.codementor.io/@anandsanto?refer=badge' class="link-secondary"> A Technology Mentor <svg width="24px" height="24px" viewBox="0 0 24 24"><g id="external_link" class="icon_svg-stroke" stroke="#666" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline><path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path></g></svg> </a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container page" >
+
+            <div class="row page_title"  style='height:15%'>
+                I could be the person you're looking for..
+            </div>
+            <div class="row noscrollbar" style='height:85%; overflow: scroll'>
+                <div class="col-md-12 col-xl-10">
+                    <p class='page_list_content'>
+                        to just to talk about stuff that we have in common 🤔
+                        <span class='sep'> ⚫ </span> or to avail my services
+                        as a freelancer 💰
+                        <span class='sep'> ⚫ </span> <a href='#' class="link-secondary">
+                            In any case click here to find out how to contact me
+                            <svg width="24px" height="24px" viewBox="0 0 24 24"><g id="external_link" class="icon_svg-stroke" stroke="#666" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline><path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path></g></svg> </a>
+
+                    </p>
+                </div>
+            </div>
+
         </div>
     </body>
+
+    <script>
+     $(window).resize(function(){
+         console.log("Resizing");
+         //scroller.scrollBy(0,0);
+         $(".page").css('height',-webkit-fill-available);
+         $(".page").css('max-height',-webkit-fill-available);
+         $(".page").css('min-height',-webkit-fill-available);
+     });
+     $(window).on('orientationchange', function(){
+         console.log("Resizing");
+         //scroller.scrollBy(0,0);
+         $(".page").css('height',-webkit-fill-available);
+         $(".page").css('max-height', -webkit-fill-available);
+         $(".page").css('min-height', -webkit-fill-available);
+     });
+    </script>
 </html>
