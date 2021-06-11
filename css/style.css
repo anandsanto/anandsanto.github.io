@@ -3,12 +3,15 @@ html{
    /* scroll-snap-type: mandatory; */
    /* scroll-snap-points-y: repeat(300px); */
   scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  
 }
 body{
   background-color: #d9f2cc/*#00b89a*/ /*#15eba3;*/;
   /* scroll-snap-type: mandatory; */
   /* scroll-snap-points-y: repeat(300px); */
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
+  /* scroll-behavior: smooth; */
 }
 
 
@@ -23,8 +26,10 @@ body{
   padding-left: 10vmin;
   padding-right: 10vmin;
   padding-bottom: 2vh;
+  margin-top: 10vh;
   font-family: 'Gilroy', sans-serif;
   font-size:calc(18px + 1.0vw);
+  /* font-size: calc((1vh/1vw)vmin); */
   line-height: 200%;
   font-weight: 500;
   color:  #333333;
@@ -44,7 +49,7 @@ body{
   margin-left: 10vmin;
   padding-left: 0;
   padding-right: 10vmin;
-  margin-top: 6vh;
+  padding-top: 6vh;
   padding-bottom: 10vh;
   font-family: 'Gilroy', sans-serif;
   font-size: calc(20px + 2vw);
@@ -122,4 +127,15 @@ body{
 .icon a:hover{
   color: #00b89a;
   font-size: 4.75vmin;
+}
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(10px, 7vw);
+  background: linear-gradient(to top, #000000, #000000);
+  height: 0;
+  opacity: 50%;
+
 }
